@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDowbleTranseption", "MyDowbleTranseption\MyDowbleTranseption.csproj", "{2C7E3DDC-F69B-4AA2-93FA-229F6AADD224}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C7E3DDC-F69B-4AA2-93FA-229F6AADD224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C7E3DDC-F69B-4AA2-93FA-229F6AADD224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C7E3DDC-F69B-4AA2-93FA-229F6AADD224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C7E3DDC-F69B-4AA2-93FA-229F6AADD224}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FDEFBE4-145E-4A60-A572-A1027445EB2E}
+	EndGlobalSection
+EndGlobal
