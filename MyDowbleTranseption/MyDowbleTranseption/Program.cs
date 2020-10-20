@@ -6,8 +6,18 @@ namespace MyDowbleTranseption
     {
         static void Main(string[] args)
         {
+            link1:
             Console.WriteLine("Введите число:");
             string num = Console.ReadLine();
+            try
+            {
+                int num0 = Convert.ToInt32(num);
+            }
+            catch
+            {
+                Console.WriteLine("Это не число, дурашка)");
+                goto link1;
+            }
             Console.WriteLine("Это число представлено в двоичной(1) или десятичной(2) системе счисления? Введите соответствуюшее число");
             string select = Console.ReadLine();
             switch (select)
@@ -20,6 +30,11 @@ namespace MyDowbleTranseption
                     do
                     {
                         int razriad = morfnum % 10;
+                        if (razriad > 1)
+                        {
+                            Console.WriteLine("Ты шутишь, это не двоичное число)");
+                            goto link1;
+                        }
                         int promnum = razriad * Convert.ToInt32(Math.Pow(2, i));
                         i += 1;
                         result += promnum;
@@ -39,4 +54,5 @@ namespace MyDowbleTranseption
                     return;
             }
         }
+    }
 }
