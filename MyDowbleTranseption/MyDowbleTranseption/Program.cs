@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace MyDowbleTranseption
 {
@@ -6,17 +7,21 @@ namespace MyDowbleTranseption
     {
         static void Main(string[] args)
         {
-            link1:
             Console.WriteLine("Введите число:");
             string num = Console.ReadLine();
-            try
+            while(true)
             {
-                int num0 = Convert.ToInt32(num);
-            }
-            catch
-            {
-                Console.WriteLine("Это не число, дурашка)");
-                goto link1;
+                try
+                {
+                    int num0 = Convert.ToInt32(num);
+                    break;
+                }
+                catch
+                {
+                    Console.WriteLine("Это не число, дурашка)");
+                    Console.WriteLine("Введите число:");
+                    num = Console.ReadLine();
+                }
             }
             Console.WriteLine("Это число представлено в двоичной(1) или десятичной(2) системе счисления? Введите соответствуюшее число");
             string select = Console.ReadLine();
@@ -27,20 +32,19 @@ namespace MyDowbleTranseption
                     int morfnum = Convert.ToInt32(num);
                     int i = 0;
                     int result = 0;
-                    do
+                    while (morfnum >= 0)
                     {
                         int razriad = morfnum % 10;
                         if (razriad > 1)
                         {
-                            Console.WriteLine("Ты шутишь, это не двоичное число)");
-                            goto link1;
+                            Console.WriteLine("Ты шутишь, это не двоичное число");
+                            return;
                         }
                         int promnum = razriad * Convert.ToInt32(Math.Pow(2, i));
                         i += 1;
                         result += promnum;
                         morfnum /= 10;
                     }
-                    while (morfnum > 0);
                     Console.WriteLine($"Ваш результат = {result}");
                     Console.ReadKey();
                     return;
@@ -52,6 +56,10 @@ namespace MyDowbleTranseption
                     Console.WriteLine($"Ваш результат = {binarycode}");
                     Console.ReadKey();
                     return;
+
+                default:
+                    Console.WriteLine("Не стоило тебе сюда приходить и шутки тут свои шутить =( =( ");
+                    break;
             }
         }
     }
