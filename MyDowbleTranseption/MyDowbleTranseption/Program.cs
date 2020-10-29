@@ -13,7 +13,7 @@ namespace MyDowbleTranseption
             {
                 try
                 {
-                    ulong num0 = Convert.ToUInt64(num);
+                    double num0 = Convert.ToDouble(num);
                     break;
                 }
                 catch
@@ -29,21 +29,21 @@ namespace MyDowbleTranseption
             {
                 case "1":
                     Console.WriteLine("Вы выбрали 1 вариант. Перевожу ваше число в десятичную форму");
-                    ulong morfnum = Convert.ToUInt64(num);
+                    decimal morfnum = Convert.ToDecimal(num);
                     int i = 0;
-                    ulong result = 0;
+                    decimal result = 0;
                     while (morfnum > 0)
                     {
-                        ulong razriad = morfnum % 10;
+                        decimal razriad = morfnum % 10;
                         if (razriad > 1)
                         {
                             Console.WriteLine("Ты шутишь, это не двоичное число");
                             return;
                         }
-                        ulong promnum = razriad * Convert.ToUInt64(Math.Pow(2, i));
+                        decimal promnum = razriad * Convert.ToDecimal(Math.Pow(2, i));
                         i += 1;
                         result += promnum;
-                        morfnum /= 10;
+                        morfnum = Math.Truncate(morfnum / 10);
                     }
                     Console.WriteLine($"Ваш результат = {result}");
                     Console.ReadKey();
@@ -51,7 +51,7 @@ namespace MyDowbleTranseption
 
                 case "2":
                     Console.WriteLine("Вы выбрали 2 вариант. Перевожу ваше число в двоичную форму");
-                    ulong dowblenum = Convert.ToUInt64(num);
+                    double dowblenum = Convert.ToDouble(num);
                     string binarycode = Convert.ToString((short)dowblenum, 2);
                     Console.WriteLine($"Ваш результат = {binarycode}");
                     Console.ReadKey();
