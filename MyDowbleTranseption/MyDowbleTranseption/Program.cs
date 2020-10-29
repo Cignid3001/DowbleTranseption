@@ -29,18 +29,18 @@ namespace MyDowbleTranseption
             {
                 case "1":
                     Console.WriteLine("Вы выбрали 1 вариант. Перевожу ваше число в десятичную форму");
-                    decimal morfnum = Convert.ToDecimal(num);
+                    double morfnum = Convert.ToDouble(num);
                     int i = 0;
-                    decimal result = 0;
+                    double result = 0;
                     while (morfnum > 0)
                     {
-                        decimal razriad = morfnum % 10;
+                        double razriad = morfnum % 10;
                         if (razriad > 1)
                         {
                             Console.WriteLine("Ты шутишь, это не двоичное число");
                             return;
                         }
-                        decimal promnum = razriad * Convert.ToDecimal(Math.Pow(2, i));
+                        double promnum = razriad * Convert.ToDouble(Math.Pow(2, i));
                         i += 1;
                         result += promnum;
                         morfnum = Math.Truncate(morfnum / 10);
