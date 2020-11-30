@@ -29,36 +29,46 @@ namespace MyDowbleTranseption
             {
                 case "1":
                     Console.WriteLine("Вы выбрали 1 вариант. Перевожу ваше число в десятичную форму");
-                    double morfnum = Convert.ToDouble(num);
-                    int i = 0;
-                    double result = 0;
-                    while (morfnum > 0)
+                    int i = 1;
+                    double goodnum = 0;
+                    for (int k = 0; k < num.Length; k++)
                     {
-                        double razriad = morfnum % 10;
-                        if (razriad > 1)
+                        if (Convert.ToInt32($"{num[k]}") > 1 || Convert.ToInt32($"{num[k]}") < 0)
                         {
-                            Console.WriteLine("Ты шутишь, это не двоичное число");
+                            Console.WriteLine("Это не двоичное число.");
                             return;
                         }
-                        double promnum = razriad * Convert.ToDouble(Math.Pow(2, i));
-                        i += 1;
-                        result += promnum;
-                        morfnum = Math.Truncate(morfnum / 10);
                     }
-                    Console.WriteLine($"Ваш результат = {result}");
+                    while (i <= num.Length)
+                    {
+                        int susanna = Convert.ToInt32($"{num[num.Length - i]}");
+                        goodnum += susanna * Math.Pow(2, i - 1);  
+                        i += 1;
+                    }
+                    Console.WriteLine($"Ваш результат = {goodnum}");
                     Console.ReadKey();
                     return;
 
                 case "2":
                     Console.WriteLine("Вы выбрали 2 вариант. Перевожу ваше число в двоичную форму");
-                    double dowblenum = Convert.ToDouble(num);
-                    string binarycode = Convert.ToString((short)dowblenum, 2);
-                    Console.WriteLine($"Ваш результат = {binarycode}");
+                    int dowblenum = Convert.ToInt32(num);
+                    /*string binarycode = Convert.ToString((short)dowblenum, 2);
+                    Console.WriteLine($"Ваш результат = {binarycode}");*/
+                    string itog = "";
+                    while (dowblenum > 2)
+                    {
+                        itog = Convert.ToString(dowblenum % 2) + itog;
+                        dowblenum = dowblenum / 2;
+                    }
+                    itog = 1 + itog;
+                    Console.WriteLine($"Ваше чиосло - {itog}");
                     Console.ReadKey();
                     return;
 
+
+
                 default:
-                    Console.WriteLine("Не стоило тебе сюда приходить и шутки тут свои шутить =( =( ");
+                    Console.WriteLine("Не стоило тебе сюда приходить и шутки тут свои шутить");
                     break;
             }
         }
